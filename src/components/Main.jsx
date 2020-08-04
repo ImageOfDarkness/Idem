@@ -1,44 +1,77 @@
 import React from "react";
 import Card from "./Card";
+import background from "../images/background.png";
+import original from "../images/original.png";
+import { NavLink } from "react-router-dom";
 
 const Main = () => {
   return (
     <main>
       <div className="conteiner">
-        <div className="wrapper wrapper--horizontal col--12">
-          <Card color="silver" rect big>
+        <div style={{ gridArea: "container1" }} className="grid grid--big">
+          <Card gridArea="big" color="silver" rect big>
             Гений непредвзято понимает под собой конфликт. Закон внешнего мира,
             очевидно, реально подчеркивает аксиоматичный здравый смысл. Культ
             джайнизма включает в себя поклонение Махавире и другим тиртханкарам,
             поэтому закон исключённого третьего индуцирует изоморфный ротор.
           </Card>
-          <div className="wrapper wrapper--vertical col--4">
-            <Card color="silver" rect>
-              Чувство однократно
-            </Card>
-            <Card color="silver" rect>
-              Морено
-            </Card>
-          </div>
+          <Card gridArea="smallTop" color="silver" rect>
+            Чувство однократно
+          </Card>
+          <Card gridArea="smallBottom" color="silver" rect>
+            <NavLink to="/chat">Chat</NavLink>
+          </Card>
         </div>
-        <div className="wrapper wrapper--horizontal col--12">
-          <div className="wrapper wrapper--vertical col--8">
-            <div className="wrapper wrapper--horizontal col--12">
-              <Card color="white" className="col--6">
-                Наши сотрудники
-              </Card>
-              <Card color="white" className="col--6">
-                Просветляет понимающий тест
-              </Card>
-            </div>
-            <div className="wrapper wrapper--horizontal">
-              <Card color="white">Конформизм</Card>
-            </div>
-          </div>
-          <div className="wrapper wrapper--vertical col--4">
-            <Card color="blue">Интроекция</Card>
-            <Card color="yellow">Наши сотрудники</Card>
-          </div>
+        <div style={{ gridArea: "container2" }} className="grid grid--middle">
+          <Card gridArea="area1" color="white">
+            Наши сотрудники
+          </Card>
+          <Card gridArea="area2" color="white">
+            Просветляет понимающий тест
+          </Card>
+          <Card gridArea="area3" color="white">
+            Конформизм
+          </Card>
+          <Card gridArea="area4" color="blue">
+            Интроекция
+          </Card>
+          <Card gridArea="area5" color="yellow">
+            Наши сотрудники
+          </Card>
+        </div>
+        <div style={{ gridArea: "container3" }} className="grid grid--rightBig">
+          <Card gridArea="smallTop" color="green" rect>
+            Понятие модернизации понимает механизм власти
+          </Card>
+          <Card gridArea="smallBottom" color="green" rect image={original}>
+            Наши сотрудники
+          </Card>
+          <Card gridArea="big" color="green" rect big>
+            Гений непредвзято понимает под собой конфликт. Закон внешнего мира,
+            очевидно, реально подчеркивает аксиоматичный здравый смысл. Культ
+            джайнизма включает в себя поклонение Махавире и другим тиртханкарам,
+            поэтому закон исключённого третьего индуцирует изоморфный ротор.
+          </Card>
+        </div>
+        <div
+          style={{ gridArea: "container4" }}
+          className="grid grid--rightMidle"
+        >
+          <Card gridArea="area1" color="yellow-pink">
+            Лидерство
+          </Card>
+          <Card gridArea="area2" color="yellow-pink">
+            Однако
+          </Card>
+          <Card gridArea="area3" color="red">
+            Невероятный гений
+          </Card>
+          <Card gridArea="area4" color="yellow-pink">
+            Точка перегиба
+          </Card>
+          <Card gridArea="area5" color="purple">
+            Длина вектора
+          </Card>
         </div>
       </div>
     </main>
