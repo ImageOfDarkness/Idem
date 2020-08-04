@@ -196,12 +196,14 @@
 }
 
 .chat {
+  display: flex;
   background-image: url(./images/forest.png);
   background-size: cover;
   background-position: center center;
   min-height: 100vh;
   color: white;
   .chat__container {
+    width: 100%;
     flex-direction: column;
   }
   .chat__send-text {
@@ -248,6 +250,19 @@
   border-radius: 5px;
   position: relative;
   .message__text {
+    position: relative;
+    &::after {
+      transform: translateX(-50%);
+      width: 0px;
+      height: 14px;
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 7px;
+      border: 14px solid transparent;
+      border-top: 14px solid #f1f3f5;
+    }
+    border-radius: 5px;
     background: #f1f3f5;
     width: fit-content;
     padding: 15px 15px 7px;
@@ -258,20 +273,27 @@
     border-radius: 30px;
   }
   &.self {
+    .message__text {
+      &::after {
+        transform: translateX(50%);
+        left: unset;
+        width: 0px;
+        height: 14px;
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 7px;
+        border: 14px solid transparent;
+        border-top: 14px solid #f1f3f5;
+      }
+    }
+
     flex-direction: row-reverse;
     align-self: flex-end;
     img {
       margin-right: 0;
       margin-left: 10px;
     }
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    left: 30px;
-    top: 0px;
-    border: 10px solid transparent;
-    border-right: 20px solid #f1f3f5;
   }
 }
 
@@ -305,6 +327,8 @@
   background: #0f54b9;
   box-shadow: 0px 4px 6px rgba(15, 84, 185, 0.3);
   border-radius: 21px;
+  border-width: 0px;
+  outline: none;
 }
 
 @media (max-width: 420px) {
