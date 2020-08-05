@@ -269,6 +269,7 @@
   }
   img {
     margin-right: 10px;
+    height: 50px;
     width: 50px;
     border-radius: 30px;
   }
@@ -329,6 +330,11 @@
   border-radius: 21px;
   border-width: 0px;
   outline: none;
+  &.__redButtonAdd {
+    position: relative;
+    margin-left: 100px;
+    background-color: red;
+  }
 }
 
 @media (max-width: 420px) {

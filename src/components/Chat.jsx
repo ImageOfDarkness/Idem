@@ -5,7 +5,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "text",
+      text: "",
       messeges: [
         { text: "text", self: true },
         { text: "text2", self: false },
@@ -37,13 +37,26 @@ class Chat extends React.Component {
             <button
               onClick={() => {
                 let newMesseges = messeges;
-                newMesseges.push({ text: text, self: true });
+                newMesseges.push({ text: text, self: false });
                 this.setState({
                   text: "",
                   messeges: newMesseges,
                 });
               }}
               className="buttonAdd"
+            >
+              Отправить
+            </button>
+            <button
+              onClick={() => {
+                let newMesseges = messeges;
+                newMesseges.push({ text: text, self: true });
+                this.setState({
+                  text: "",
+                  messeges: newMesseges,
+                });
+              }}
+              className="buttonAdd __redButtonAdd"
             >
               Отправить
             </button>
